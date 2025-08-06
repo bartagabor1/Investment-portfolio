@@ -114,7 +114,7 @@
   | 5    | Monthly Transaction Trend        | `monthly_transaction_trend.sql`       | Stacked Column Chart     |
   | 6    | Top Clients by Fees              | `top_fee_payers.sql`                  | Bar Chart                |
 
-  🖼️ Preview available in [`powerbi/benchmark_snapshot.jpg`](powerbi/benchmark_snapshot.jpeg)
+  🖼️ Preview available in [`powerbi/benchmark_snapshot.jpg`](powerbi/benchmark_snapshot.jpg)
 
   ---
 
