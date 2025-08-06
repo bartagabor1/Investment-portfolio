@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investment Portfolio Project</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 800px; padding: 0 20px; }
+    h1, h2, h3 { color: #2c3e50; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    table, th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f8f8f8; }
+  </style>
+</head>
+<body>
+  <h1>💼 Investment Portfolio Analysis</h1>
+  <p>This project analyzes and visualizes data from an investment portfolio management system using MySQL, Python, Jupyter, and Power BI.</p>
+
+<h2>🧱 Project Structure</h2>
+<pre>
+investment_portfolio/
+├── docker/                  #  MySQL init
+│   └── init.sql
+├── scripts/                 # SQL scripts
+│   ├── schema/
+│   ├── data/
+│   └── queries/
+├── notebooks/              # Jupyter Notebook analysis
+├── powerbi/                # Power BI dashboard (.pbix)
+├── requirements.txt
+├── README.md
+├── docker-compose.yml
+├── .env
+└── .gitignore
+</pre>
+  <h2>🚀 Getting Started</h2>
+  <h3>1. Start the MySQL container</h3>
+  <pre><code>docker-compose up -d</code></pre>
+  <p>Configuration in <code>.env</code>:</p>
+  <pre><code>MYSQL_PORT=3307  
+MYSQL_ROOT_PASSWORD=root  
+MYSQL_DATABASE=investment_portfolio</code></pre>
+
+  <h3>2. Generate SQLite database</h3>
+  <pre><code>python create_db_from_sql.py</code></pre>
+
+  <h3>3. Generate Jupyter Notebook</h3>
+  <pre><code>python generate_notebook.py</code></pre>
+  <p>Create notebook at: <code>notebooks/analysis_investment_portfolio.ipynb</code></p>
+
+  <h2>📊 Power BI Dashboards</h2>
+    <h3>🔑 KPI Highlights</h3>
+  <ul>
+    <li><strong>Total AUM (Assets Under Management):</strong> Total value of all portfolios combined.</li>
+    <li><strong>Average Annual Return:</strong> Mean annual return across all portfolios and investments.</li>
+    <li><strong>Top Portfolio Return:</strong> Highest-performing portfolio based on annual return.</li>
+    <li><strong>Risk-Adjusted Return:</strong> Return adjusted for volatility, providing a more balanced performance view.</li>
+  </ul>
+
+  <h3>📈 Charts</h3>
+
+  <table>
+    <tr><th>Step</th><th>Visualization</th><th>SQL File</th><th>Chart Type</th></tr>
+    <tr><td>1</td><td>Portfolio vs. Market Benchmark</td><td>portfolio_vs_market_benchmark.sql</td><td>Clustered Column Chart</td></tr>
+    <tr><td>3</td><td>Asset Allocation Breakdown</td><td>asset_allocation_breakdown.sql</td><td>Donut Chart</td></tr>
+    <tr><td>4</td><td>Risk‑Adjusted Returns</td><td>risk_adjusted_return.sql</td><td>Bar Chart</td></tr>
+    <tr><td>6</td><td>Top Clients by Fees</td><td>top_fee_payers.sql</td><td>Bar Chart</td></tr>
+    <tr><td>2</td><td>Moving Average Return</td><td>moving_avg_returns.sql</td><td>Line Chart</td></tr>
+    <tr><td>5</td><td>Monthly Transaction Trend</td><td>monthly_transaction_trend.sql</td><td>Stacked Column Chart</td></tr>
+  </table>
+
+  <h2>⚙️ Requirements</h2>
+  <ul>
+    <li>Python 3.8+</li>
+    <li>Docker & Docker Compose</li>
+    <li>Jupyter Notebook</li>
+    <li>Python libraries: pandas, sqlalchemy, python-dotenv, mysql-connector-python, matplotlib, nbformat</li>
+  </ul>
+
+  <h2>📝 License</h2>
+  <p>Open for educational use. Please retain attribution.</p>
+
+  <h2>📬 Contact</h2>
+  <p>Report issues or questions via GitHub Issues.</p>
+</body>
+</html>

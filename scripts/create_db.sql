@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS investment_portfolio;
 USE investment_portfolio;
 
---TABLE: clients
+-- TABLE: clients
 CREATE TABLE clients (
     client_id INT PRIMARY KEY,                    
     first_name VARCHAR(100),                      
@@ -62,6 +62,30 @@ CREATE TABLE returns (
     return_type VARCHAR(50),                      
     description TEXT,                             
     FOREIGN KEY (portfolio_id) REFERENCES portfolios(portfolio_id), 
+    FOREIGN KEY (investment_id) REFERENCES investments(investment_id)
+);
+
+-- Connection tables for clients and portfolios
+CREATE TABLE client_portfolios (
+    client_id INT,
+    portfolio_id INT,
+    allocation_percentage DECIMAL(5,2),  -- NULL, if not owner
+    role VARCHAR(50),                    -- e.g., 'owner', 'manager', 'viewer'
+    joined_date DATE,
+    PRIMARY KEY (client_id, portfolio_id),
+    FOREIGN KEY (client_id) REFERENCES clients(client_id),
+    FOREIGN KEY (portfolio_id) REFERENCES portfolios(portfolio_id)
+);
+
+-- Connection table for portfolios and investments
+CREATE TABLE portfolio_investments (
+    portfolio_id INT,
+    investment_id INT,
+    quantity INT,
+    purchase_price DECIMAL(15,2),
+    purchase_date DATE,
+    PRIMARY KEY (portfolio_id, investment_id, purchase_date),
+    FOREIGN KEY (portfolio_id) REFERENCES portfolios(portfolio_id),
     FOREIGN KEY (investment_id) REFERENCES investments(investment_id)
 );
 

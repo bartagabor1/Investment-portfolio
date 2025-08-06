@@ -1,95 +1,158 @@
-# Investment-portfolio
-A comprehensive, structured database model for investment portfolios, including stocks, bonds, real estate, and more. Includes tables for transactions, returns, clients, and portfolios.
+  # 💼 Investment Portfolio Analysis
 
-## 📊 Overview
+  This project analyzes and visualizes data from an investment portfolio management system using **MySQL**, **Python**, **Jupyter Notebook**, and **Power BI**. It demonstrates data engineering, SQL analytics, data visualization, and business intelligence skills.
 
-This repository provides a comprehensive framework for managing, tracking, and analyzing investment portfolios. It includes robust database schemas, reusable SQL queries, data processing scripts, and Power BI dashboards for insightful reporting.
+  ---
 
-Whether you’re an individual investor or a team managing multiple portfolios, this project streamlines data management and empowers data-driven decisions.
+  ## 🗂️ Project Structure
 
-## 🚀 Features
+  ```
+  investment_portfolio/
+  ├── docker/
+  │   ├── docker-compose.yml
+  │   ├── init.sql
+  │   ├── .env
+  ├── scripts/
+  │   ├── create_db.sql
+  │   ├── insert_sample_data.sql
+  │   └── queries/
+  │       ├── client_insights/
+  │       │   ├── top_fee_payers.sql
+  │       │   └── client_owned_value_summary.sql
+  │       ├── portfolio_analysis/
+  │       │   ├── portfolio_weighted_return.sql
+  │       │   ├── portfolio_risk_vs_client_risk.sql
+  │       │   ├── most_diversified_portfolios.sql
+  │       │   └── top_portfolios_by_annual_return.sql
+  │       ├── investment_analysis/
+  │       │   └── risk_adjusted_return.sql
+  │       ├── dashboards/
+  │       │   ├── asset_allocation_breakdown.sql
+  │       │   └── monthly_transaction_trend.sql
+  │       └── advanced/
+  │           ├── moving_avg_returns.sql
+  │           ├── client_rank_by_ownership.sql
+  │           ├── last3_transactions_per_investment.sql
+  │           └── portfolio_vs_market_benchmark.sql
+  ├── tables/
+  │   ├── client_portfolios.sql
+  │   ├── clients.sql
+  │   ├── investments.sql
+  │   ├── portfolio_investments.sql
+  │   ├── portfolios.sql
+  │   ├── returns.sql
+  │   └── transactions.sql
+  ├── notebooks/
+  │   └── analysis_investment_portfolio.ipynb
+  ├── powerbi/
+  │   ├── investment_portfolio_dashboard.pbix
+  │   └── benchmark_snapshot.jpeg
+  ├── docs/
+  │   └── index.html
+  ├── requirements.txt
+  ├── README.md
+  └── .gitignore
+  ```
 
-Modular Database Schema: SQL scripts for portfolios, investments, transactions, returns, and more.
-Data Pipeline: Organized structure for raw and processed data.
-Reusable Queries: Ready-to-use SQL files for common analytics and reporting.
-Power BI Dashboards: Visualizations and templates for interactive analysis.
-Jupyter Notebooks: For data exploration, cleaning, and advanced analytics.
-Documentation: ER diagrams, data dictionaries, and process guides.
+  ---
 
-## 🗂️ Project Structure
+  ## 🚀 Getting Started
 
-Investmen-portfolio/
+ ### 1. Clone the repository
 
-├── data/
+```bash
+  git clone https://github.com/bartagabor1/Investment-portfolio.git
+  cd Investment-portfolio
+```
+  
+  2. **Start MySQL via Docker**
 
-    ├── raw/            # Original/raw data files
-    
-    └── processed/      # Cleaned/ready-to-use data
-├── tables/             # SQL table definitions
+  ```bash
+  cd docker
+  docker-compose up -d
+  ```
 
-├── scripts/
+  3. **Load schema & data**
 
-    ├── create_db.sql       # Full database creation script
+  The `init.sql` file automatically sets up schema and inserts sample data when the container starts.
 
-    ├── insert_sample_data.sql
+  4. **Open Jupyter Notebook**
 
-    └── queries/            # Analytical/query SQL scripts
+  Run exploratory analysis in:
 
-├── notebooks/          # Jupyter Notebooks for analysis
+  ```
+  notebooks/analysis_investment_portfolio.ipynb
+  ```
 
-├── powerbi/            # Power BI dashboards, exports, queries
+  5. **Open Power BI Dashboard**
 
-├── reports/            # Exported reports, data snapshots, PDFs
+  Explore KPIs and charts in:
 
-├── docs/               # Documentation, ERDs, data dictionary, guides
+  ```
+  powerbi/investment_portfolio_dashboard.pbix
+  ```
 
-├── .gitignore
+  ---
 
-└── README.md
+  ## 📊 Power BI Dashboards
 
+  ### 🔑 KPI Highlights
 
-## 🛠️ Getting Started
+  - **Total AUM (Assets Under Management):** Total value of all portfolios combined.
+  - **Average Annual Return:** Mean annual return across all portfolios and investments.
+  - **Top Portfolio Return:** Highest-performing portfolio based on annual return.
+  - **Risk-Adjusted Return:** Return adjusted for volatility, offering a more balanced performance view.
 
-1. Clone the Repository
-git clone https://github.com/bartagabor1/Investment-portfolio.git
-cd Investmen-portfolio
-2. Database setup
-Create the database using the provided script:
--- In your SQL environment:
-source scripts/create_db.sql;
-(Optional) Load sample data:
-source scripts/insert_sample_data.sql;
-3. Data Processing
-Place your source data in data/raw/.
-Use scripts or notebooks in notebooks/ to clean/process data into data/processed/.
-4. Analysis & Visualization
-Use SQL queries in scripts/queries/ for ad-hoc analysis or reporting.
-Open and explore Power BI dashboards in powerbi/.
-Review or create new analysis in Jupyter Notebooks (notebooks/).
+  ### 📈 Dashboard Visualizations
 
-## 💡 Example Use Cases
+  | Step | Visualization                    | SQL File                              | Chart Type               |
+  |------|----------------------------------|----------------------------------------|--------------------------|
+  | 1    | Portfolio vs. Market Benchmark   | `portfolio_vs_market_benchmark.sql`   | Clustered Column Chart   |
+  | 2    | Moving Average Return            | `moving_avg_returns.sql`              | Line Chart               |
+  | 3    | Asset Allocation Breakdown       | `asset_allocation_breakdown.sql`      | Donut Chart              |
+  | 4    | Risk‑Adjusted Returns            | `risk_adjusted_return.sql`            | Bar Chart                |
+  | 5    | Monthly Transaction Trend        | `monthly_transaction_trend.sql`       | Stacked Column Chart     |
+  | 6    | Top Clients by Fees              | `top_fee_payers.sql`                  | Bar Chart                |
 
-Track portfolio performance over time
-Analyze asset allocation and diversification
-Calculate returns, fees, and transaction summaries
-Visualize trends with Power BI dashboards
-Prepare custom investment reports
+  🖼️ Preview available in [`powerbi/benchmark_snapshot.jpeg`](powerbi/benchmark_snapshot.jpeg)
 
-## 📚 Documentation
+  ---
 
-Entity Relationships & Schema: See docs/er_diagram.png
-Data Dictionary: See docs/data_dictionary.md
-Setup & Usage Guide: See docs/setup.md
+  ## 📚 Documentation
 
-## 🤝 Contributing
+  - [`docs/index.html`](docs/index.html): A self-contained HTML documentation page detailing the project overview, folder structure, setup, and Power BI insights.
+  - [`powerbi/benchmark_snapshot.jpeg`](powerbi/benchmark_snapshot.jpeg): A PDF snapshot of the dashboard with KPIs and key charts.
+  - [`reports/benchmark_report.pdf`](reports/benchmark_report.pdf): The final written investment portfolio report as a PDF.
+  ---
 
-Contributions are welcome! Please open issues or submit pull requests for improvements, new features, or bug fixes.
+  ## ⚙️ Requirements
 
-## 📄  License
+  - Python 3.8+
+  - Docker & Docker Compose
+  - Jupyter Notebook
+  - Python packages: `pandas`, `sqlalchemy`, `python-dotenv`, `mysql-connector-python`, `matplotlib`, `nbformat`, `seaborn`, `jupyter`
 
-This project is licensed under the MIT License.
+  Install dependencies with:
 
-## 🙌  Acknowledgments
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-Inspired by best practices in data engineering and investment analytics.
-Special thanks to all contributors and the open-source community.
+  ---
+
+  ## 📝 License
+
+  For educational purposes. Please retain attribution when reusing.
+
+  ---
+
+  ## 📬 Contact
+
+  Feel free to open issues or submit pull requests. Questions welcome via GitHub Issues.
+
+## ✅ Author
+Created by Gabor Barta
+
+### 💼 Fiverr profile: fiverr.com/gaborbarta1
+
+### 📬 Contact: barta.gabor1992@email.com
