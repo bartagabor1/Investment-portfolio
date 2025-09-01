@@ -1,5 +1,12 @@
   # 💼 Investment Portfolio Analysis
 
+![Investment Portfolio Banner](visuals/banner.png)
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)](https://www.mysql.com/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)](https://www.docker.com/)
+[![Power BI](https://img.shields.io/badge/PowerBI-DataViz-yellow?logo=powerbi)](https://powerbi.microsoft.com/)
+
   This project analyzes and visualizes data from an investment portfolio management system using **MySQL**, **Python**, **Jupyter Notebook**, and **Power BI**. It demonstrates data engineering, SQL analytics, data visualization, and business intelligence skills.
 
   ---
